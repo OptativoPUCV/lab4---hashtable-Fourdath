@@ -1190,3 +1190,9 @@ hashmap.c:42:6: note: previous definition of ‘insertMap’ with type ‘void(H
       |      ^~~~~~~~~
 Compilation failed
 d60a523
+Fri 14 Apr 2023 07:52:40 AM UTC: 
+ hashmap.c | 4 ----
+ 1 file changed, 4 deletions(-)
+ tests:  1|5
+total_score: 10/70
+ce5fbc9
