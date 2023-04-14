@@ -1160,3 +1160,21 @@ Fri 14 Apr 2023 07:45:44 AM UTC:
  tests:  1|5
 total_score: 10/70
 c808970
+Fri 14 Apr 2023 07:51:58 AM UTC: 
+ hashmap.c | 26 ++++++++++++++++++++++++++
+ 1 file changed, 26 insertions(+)
+In file included from test.c:4:
+hashmap.c:47:6: error: redefinition of ‘insertMap’
+   47 | void insertMap(HashMap * map, char * key, void * value){
+      |      ^~~~~~~~~
+hashmap.c:42:6: note: previous definition of ‘insertMap’ with type ‘void(HashMap *, char *, void *)’ {aka ‘void(struct HashMap *, char *, void *)’}
+   42 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+hashmap.c:51:6: error: redefinition of ‘insertMap’
+   51 | void insertMap(HashMap * map, char * key, void * value){
+      |      ^~~~~~~~~
+hashmap.c:42:6: note: previous definition of ‘insertMap’ with type ‘void(HashMap *, char *, void *)’ {aka ‘void(struct HashMap *, char *, void *)’}
+   42 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+Compilation failed
+5e36358
