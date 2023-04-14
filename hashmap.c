@@ -1,20 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <ctype.h>
-#include "hashmap.h"
 
-
-typedef struct HashMap HashMap;
-int enlarge_called=0;
-
-struct HashMap {
-    Pair ** buckets;
-    long size; //cantidad de datos/pairs en la tabla
-    long capacity; //capacidad de la tabla
-    long current; //indice del ultimo dato accedido
-};
 
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
@@ -51,9 +35,21 @@ void enlarge(HashMap * map) {
 }
 
 
-HashMap * createMap(long capacity) {
-
-    return NULL;
+HashMap * createMap(long capacity) { 
+    HashMap *map = (HashMap *) malloc(sizeof(HashMap));
+    if (map == NULL) {
+        return NULL;
+    } 
+    map->buckets = (Pair **) calloc(capacity, sizeof(Pair *));
+    if (map->buckets == NULL) {
+        free(map);
+        return NULL;
+    }
+    map->size = 0;
+    map->capacity = capacity;
+    map->current = -1;
+    
+    return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
