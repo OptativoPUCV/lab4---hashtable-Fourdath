@@ -49,8 +49,8 @@ void insertMap(HashMap * map, char * key, void * value){
         pos = (pos + 1) % map->capacity;
     }
     
-    Pair * new_pair = createPair(key, value);
-    map->buckets[pos] = new_pair;
+    Pair * nuevo_pair = createPair(key, value);
+    map->buckets[pos] = nuevo_pair;
     
     map->size++;
     map->current = pos;
@@ -60,28 +60,6 @@ void insertMap(HashMap * map, char * key, void * value){
     }
 }
 
-/*
-void insertMap(HashMap * map, char * key, void * value){
-    if(map == NULL || key == NULL) return;
-    
-    if(searchMap(map, key) != NULL) return;
-    
-    long pos = hash(key, map->capacity);
-
-    while(map->buckets[pos] != NULL && map->buckets[pos]->key != NULL){
-        pos = (pos + 1) % map->capacity;
-    }
-    
-    Pair * new_pair = createPair(key, value);
-    map->buckets[pos] = new_pair;
-    
-    map->size++;
-    map->current = pos;
-    
-    if(map->size >= map->capacity/2){
-        enlarge(map);
-    }
-}**/
 
 void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
@@ -100,8 +78,6 @@ void enlarge(HashMap * map) {
 
   
   
-
-
 HashMap * createMap(long capacity) {
     HashMap *map = (HashMap *) malloc(sizeof(HashMap));
     if (map == NULL) {
