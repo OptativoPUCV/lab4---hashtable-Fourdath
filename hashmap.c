@@ -45,10 +45,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void insertMap(HashMap * map, char * key, void * value){
-
-
-}
-void insertMap(HashMap * map, char * key, void * value){
     if(map == NULL || key == NULL) return;
     
     if(searchMap(map, key) != NULL) return;

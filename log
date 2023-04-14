@@ -1178,3 +1178,15 @@ hashmap.c:42:6: note: previous definition of ‘insertMap’ with type ‘void(H
       |      ^~~~~~~~~
 Compilation failed
 5e36358
+Fri 14 Apr 2023 07:52:19 AM UTC: 
+ hashmap.c | 4 ----
+ 1 file changed, 4 deletions(-)
+In file included from test.c:4:
+hashmap.c:47:6: error: redefinition of ‘insertMap’
+   47 | void insertMap(HashMap * map, char * key, void * value){
+      |      ^~~~~~~~~
+hashmap.c:42:6: note: previous definition of ‘insertMap’ with type ‘void(HashMap *, char *, void *)’ {aka ‘void(struct HashMap *, char *, void *)’}
+   42 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+Compilation failed
+d60a523
