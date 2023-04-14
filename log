@@ -1148,3 +1148,9 @@ test.c:439:59: error: request for member ‘buckets’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 95451f7
+Fri 14 Apr 2023 07:45:09 AM UTC: 
+ hashmap.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/70
+1aca8b9
