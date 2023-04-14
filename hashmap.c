@@ -74,6 +74,7 @@ void enlarge(HashMap * map) {
     if (pair != NULL && pair->key != NULL) {
         insertMap(map, pair->key, pair->value);
     }
+  }  
 }
 
   
